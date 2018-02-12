@@ -30,9 +30,9 @@
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="form-group col-sm-8">            
+          <div class="form-group col-sm-10 offset-sm-2">            
             <div class="row form-group">
-              <div class="col-sm-3">
+              <div class="col-sm-2">
                 <label for="brgy">Select Barangay</label>
                 <div class="form-group">                  
                   <select class="form-control" id="brgy">
@@ -40,7 +40,7 @@
                   </select>              
                 </div>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-2">
                 <label for="reportlist">Report Areas</label>
                 <div class="form-group">                  
                   <select class="form-control" id="reportlist">
@@ -48,16 +48,23 @@
                     <option value="2">Household Economic Condition</option>
                     <option value="3">Housing Condition</option>
                     <option value="4">Environmental Sanitation and Management</option>
+                    <option value="5">Responsible Parenthood</option>
+                    <option value="6">Agriculture</option>
+                    <option value="7">Distance to nearest public utilities</option>
                   </select>              
                 </div>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-2">
                 <label for="showbrgy">Toogle to show report</label>
                 <button class="btn btn-primary btn-md form-control" id="showbrgy">Generate</button>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-2">
                 <label for="showbrgy">Toogle to print report</label>
                 <button class="btn btn-primary btn-md form-control" id="printreport">Print</button>
+              </div>
+              <div class="col-sm-2">
+                <label for="Export">Toogle to Export</label>
+                <button class="btn btn-primary btn-md form-control" id="Export">Export</button>
               </div>
             </div>
             <!--/.row-->
@@ -68,6 +75,9 @@
             @include('tabreport2')
             @include('tabreport3')
             @include('tabreport4')
+            @include('tabreport5')
+            @include('tabreport6')
+            @include('tabreport7')
           </div>
 
         </div>

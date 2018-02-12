@@ -76,6 +76,28 @@ Route::group(['middleware' => 'auth'], function(){
   Route::get('reports/toilettype','dbcontroller@toilettype');
 
   Route::get('reports/garbagedisposal','dbcontroller@garbagedisposal');
+
+  Route::get('reports/birthspacing','dbcontroller@birthspacing');
+
+  Route::get('reports/fpstopping','dbcontroller@fpstopping');
+
+  Route::get('reports/engagedfarming','dbcontroller@engagedfarming');
+
+  Route::get('reports/crops','dbcontroller@crops');
+
+  Route::get('reports/marketdistance','dbcontroller@marketdistance');
+
+  Route::get('reports/publicpreschool','dbcontroller@publicpreschool');
+
+  Route::get('reports/publicprimaryschool','dbcontroller@publicprimaryschool');
+
+  Route::get('reports/publictertiaryshcool','dbcontroller@publictertiaryshcool');
+
+  Route::get('reports/privatepreschool','dbcontroller@privatepreschool');
+
+  Route::get('data-entry',function(){
+    return view('data-entry');
+  });
   
 });
 

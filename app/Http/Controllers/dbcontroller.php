@@ -37,6 +37,15 @@ class dbcontroller extends Controller
   protected $toilettype = array();
   protected $garbagedisposal = array();
   protected $users = array();
+  protected $birthspacing = array();
+  protected $fpstopping = array();
+  protected $engagedfarming = array();
+  protected $crops = array();
+  protected $marketdistance = array();
+  protected $publicpreschool = array();
+  protected $publicprimaryschool = array();
+  protected $publictertiaryshcool = array();
+  protected $privatepreschool = array();
 
   protected $brgy = array();
 
@@ -60,6 +69,133 @@ class dbcontroller extends Controller
       event(new Registered($user = $this->create($request->all())));
 
       return redirect($this->redirectPath());
+  }
+  
+  /**
+   * [privatepreschool description]
+   * @param Request $r [description]
+   */
+  
+  public function privatepreschool(Request $r){
+    try {
+      $this->privatepreschool = DB::select('CALL privatepreschool('.$r->BrgyID.')');
+      return response($this->privatepreschool);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+
+  /**
+   * [publictertiaryshcool description]
+   * @param Request $r [description]
+   */
+  
+  public function publictertiaryshcool(Request $r){
+    try {
+      $this->publictertiaryshcool = DB::select('CALL publictertiaryshcool('.$r->BrgyID.')');
+      return response($this->publictertiaryshcool);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+
+  /**
+   * [publicprimaryschool description]
+   * @param Request $r [description]
+   */
+  
+  public function publicprimaryschool(Request $r){
+    try {
+      $this->publicprimaryschool = DB::select('CALL publicprimaryschool('.$r->BrgyID.')');
+      return response($this->publicprimaryschool);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+
+  /**
+   * [publicpreschool description]
+   * @param Request $r [description]
+   */
+  
+  public function publicpreschool(Request $r){
+    try {
+      $this->publicpreschool = DB::select('CALL publicpreschool('.$r->BrgyID.')');
+      return response($this->publicpreschool);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+
+  /**
+   * [marketdistance description]
+   * @param Request $r [description]
+   */
+  
+  public function marketdistance(Request $r){
+    try {
+      $this->marketdistance = DB::select('CALL marketdistance('.$r->BrgyID.')');
+      return response($this->marketdistance);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+
+  /**
+   * [crops description]
+   * @param Request $r [description]
+   */
+  
+  public function crops(Request $r){
+    try {
+      $this->crops = DB::select('CALL crops('.$r->BrgyID.')');
+      return response($this->crops);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+
+  /**
+   * [engagedfarming description]
+   * @param Request $r [description]
+   */
+  
+  public function engagedfarming(Request $r){
+    try {
+      $this->engagedfarming = DB::select('CALL engagedfarming('.$r->BrgyID.')');
+      return response($this->engagedfarming);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+
+  /**
+   * [FPStopping description]
+   * @param Request $r [description]
+   */
+  
+  public function fpstopping(Request $r){
+    try {
+      $this->fpstopping = DB::select('CALL FPStopping('.$r->BrgyID.')');
+      return response($this->fpstopping);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+
+  /**
+   * [birthspacing description]
+   * @param  Request $r [description]
+   * @return [type]     [description]
+   */
+  
+  public function birthspacing(Request $r){
+    try {
+      $this->birthspacing = DB::select('CALL BirthSpacing('.$r->BrgyID.')');
+      return response($this->birthspacing);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
   }
 
   public function population(Request $r){
@@ -164,7 +300,7 @@ class dbcontroller extends Controller
 
   public function socialservices(Request $r){
     try {
-      $this->socialservices = DB::select('CALL socialservices()');
+      $this->socialservices = DB::select('CALL socialservices('.$r->BrgyID.')');
       return response($this->socialservices);
     } catch (\Exception $e) {
       dd($e);
@@ -174,7 +310,7 @@ class dbcontroller extends Controller
 
   public function specialskills(Request $r){
     try {
-      $this->specialskills = DB::select('CALL specialskills()');
+      $this->specialskills = DB::select('CALL specialskills('.$r->BrgyID.')');
       return response($this->specialskills);
     } catch (\Exception $e) {
       dd($e);
@@ -184,7 +320,7 @@ class dbcontroller extends Controller
 
   public function monthlyincome(Request $r){
     try {
-      $this->monthlyincome = DB::select('CALL monthlyincome()');
+      $this->monthlyincome = DB::select('CALL monthlyincome('.$r->BrgyID.')');
       return response($this->monthlyincome);
     } catch (\Exception $e) {
       dd($e);
@@ -194,7 +330,7 @@ class dbcontroller extends Controller
   
   public function unitoccupied(Request $r){
     try {
-      $this->unitoccupied = DB::select('CALL UnitOccupied()');
+      $this->unitoccupied = DB::select('CALL UnitOccupied('.$r->BrgyID.')');
       return response($this->unitoccupied);
     } catch (\Exception $e) {
       dd($e);
@@ -203,7 +339,7 @@ class dbcontroller extends Controller
 
   public function classificationofhouse(Request $r){
     try {
-      $this->classificationofhouse = DB::select('CALL classificationofhouse()');
+      $this->classificationofhouse = DB::select('CALL classificationofhouse('.$r->BrgyID.')');
       return response($this->classificationofhouse);
     } catch (\Exception $e) {
       dd($e);
@@ -212,7 +348,7 @@ class dbcontroller extends Controller
 
   public function lightingfuel(Request $r){
     try {
-      $this->lightingfuel = DB::select('CALL lightingfuel()');
+      $this->lightingfuel = DB::select('CALL lightingfuel('.$r->BrgyID.')');
       return response($this->lightingfuel);
     } catch (\Exception $e) {
       dd($e);
@@ -221,7 +357,7 @@ class dbcontroller extends Controller
 
   public function CookingFuel(Request $r){
     try {
-      $this->CookingFuel = DB::select('CALL CookingFuel()');
+      $this->CookingFuel = DB::select('CALL CookingFuel('.$r->BrgyID.')');
       return response($this->CookingFuel);
     } catch (\Exception $e) {
       dd($e);
@@ -230,7 +366,7 @@ class dbcontroller extends Controller
 
   public function houselocation(Request $r){
     try {
-      $this->houselocation = DB::select('CALL houselocation()');
+      $this->houselocation = DB::select('CALL houselocation('.$r->BrgyID.')');
       return response($this->houselocation);
     } catch (\Exception $e) {
       dd($e);
@@ -239,7 +375,7 @@ class dbcontroller extends Controller
 
   public function householdappliances(Request $r){
     try {
-      $this->householdappliances = DB::select('CALL householdappliances()');
+      $this->householdappliances = DB::select('CALL householdappliances('.$r->BrgyID.')');
       return response($this->householdappliances);
     } catch (\Exception $e) {
       dd($e);
@@ -248,7 +384,7 @@ class dbcontroller extends Controller
 
   public function drinkingwater(Request $r){
     try {
-      $this->drinkingwater = DB::select('CALL DrinkingWater()');
+      $this->drinkingwater = DB::select('CALL DrinkingWater('.$r->BrgyID.')');
       return response($this->drinkingwater);
     } catch (\Exception $e) {
       dd($e);
@@ -257,7 +393,7 @@ class dbcontroller extends Controller
 
   public function gendrinkingwater(Request $r){
     try {
-      $this->gendrinkingwater = DB::select('CALL GenDrinkingWater()');
+      $this->gendrinkingwater = DB::select('CALL GenDrinkingWater('.$r->BrgyID.')');
       return response($this->gendrinkingwater);
     } catch (\Exception $e) {
       dd($e);
@@ -266,7 +402,7 @@ class dbcontroller extends Controller
 
   public function watersourcedistance(Request $r){
     try {
-      $this->watersourcedistance = DB::select('CALL WaterSourceDistance()');
+      $this->watersourcedistance = DB::select('CALL WaterSourceDistance('.$r->BrgyID.')');
       return response($this->watersourcedistance);
     } catch (\Exception $e) {
       dd($e);
@@ -275,7 +411,7 @@ class dbcontroller extends Controller
   
   public function genwatersourcedistance(Request $r){
     try {
-      $this->genwatersourcedistance = DB::select('CALL GenWaterSourceDistance()');
+      $this->genwatersourcedistance = DB::select('CALL GenWaterSourceDistance('.$r->BrgyID.')');
       return response($this->genwatersourcedistance);
     } catch (\Exception $e) {
       dd($e);
@@ -284,7 +420,7 @@ class dbcontroller extends Controller
 
   public function toilettype(Request $r){
     try {
-      $this->toilettype = DB::select('CALL ToiletType()');
+      $this->toilettype = DB::select('CALL ToiletType('.$r->BrgyID.')');
       return response($this->toilettype);
     } catch (\Exception $e) {
       dd($e);
@@ -293,7 +429,7 @@ class dbcontroller extends Controller
 
   public function garbagedisposal(Request $r){
     try {
-      $this->garbagedisposal = DB::select('CALL GarbageDisposal()');
+      $this->garbagedisposal = DB::select('CALL GarbageDisposal('.$r->BrgyID.')');
       return response($this->garbagedisposal);
     } catch (\Exception $e) {
       dd($e);

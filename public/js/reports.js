@@ -15,7 +15,7 @@ var initmodule = {
 
 var reportmodule = {
   population : function(request){
-    $.get(window.location.href + "/population",request,function(data){
+    $.get(window.location.href + "/population",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbpopulation">'
       output += '<thead class="font-weight-bold"><tr>'
       output += '<td>Age Group</td>'
@@ -47,7 +47,7 @@ var reportmodule = {
     })
   },
   householdhead : function(request){
-    $.get(window.location.href + "/HouseholdHeadCount",request,function(data){
+    $.get(window.location.href + "/HouseholdHeadCount",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbhouseholdhead">'
       output += '<thead class="font-weight-bold"><tr>'
       output += '<td> Barangay</td>'
@@ -77,7 +77,7 @@ var reportmodule = {
     })
   },
   maritalstatus : function(request){
-    $.get(window.location.href + "/maritalstatus",request,function(data){
+    $.get(window.location.href + "/maritalstatus",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center maritalstatus" width="100%" id="tbmaritalstatus">'
       output += '<thead class="font-weight-bold"><tr>'
       output += '<th rowspan="2">Barangay</th>'
@@ -162,7 +162,7 @@ var reportmodule = {
     })
   },
   birthRA : function(request){
-    $.get(window.location.href + "/birthRA",request,function(data){      
+    $.get(window.location.href + "/birthRA",{BrgyID : $('#brgy').val()},function(data){      
       var output = '<table class="table table-hover table-bordered text-center table-responsive" width="100%" id="tbbirthRA">'      
       output += '<thead>'
       output += '<tr>'
@@ -244,7 +244,7 @@ var reportmodule = {
     })
   },
   EducProfile : function(request){
-    $.get(window.location.href + "/educprofile",request,function(data){      
+    $.get(window.location.href + "/educprofile",{BrgyID : $('#brgy').val()},function(data){      
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbEducProfile">'      
       output += '<thead>'
       output += '<tr>'
@@ -276,7 +276,7 @@ var reportmodule = {
     })    
   },
   AttendingSchool : function(request){
-    $.get(window.location.href + "/attendingschool",request,function(data){      
+    $.get(window.location.href + "/attendingschool",{BrgyID : $('#brgy').val()},function(data){      
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbAttendingSchool">'      
       output += '<thead>'
       output += '<tr>'
@@ -308,7 +308,7 @@ var reportmodule = {
     })   
   },
   notattendingschool : function(request){
-    $.get(window.location.href + "/notattendingschool",request,function(data){      
+    $.get(window.location.href + "/notattendingschool",{BrgyID : $('#brgy').val()},function(data){      
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbnotattendingschool">'      
       output += '<thead>'
       output += '<tr>'
@@ -340,7 +340,7 @@ var reportmodule = {
     })   
   },
   religousaffiliation : function(request){
-    $.get(window.location.href + "/religousaffiliation",request,function(data){      
+    $.get(window.location.href + "/religousaffiliation",{BrgyID : $('#brgy').val()},function(data){      
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbreligousaffiliation">'      
       output += '<thead>'
       output += '<tr>'
@@ -372,7 +372,7 @@ var reportmodule = {
     })  
   },
   disabledpersons : function(request){
-    $.get(window.location.href + "/disabledpersons",request,function(data){      
+    $.get(window.location.href + "/disabledpersons",{BrgyID : $('#brgy').val()},function(data){      
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbdisabledpersons">'      
       output += '<thead>'
       output += '<tr>'
@@ -404,7 +404,7 @@ var reportmodule = {
     }) 
   },
   regvoters4ps : function(request){
-    $.get(window.location.href + "/regvoters4ps",request,function(data){      
+    $.get(window.location.href + "/regvoters4ps",{BrgyID : $('#brgy').val()},function(data){      
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbregvoters4ps">'      
       output += '<thead>'
       output += '<tr>'
@@ -433,8 +433,8 @@ var reportmodule = {
       output = '';
     }) 
   },
-  socialservices : function(){
-    $.get(window.location.href + "/socialservices",{},function(data){      
+  socialservices : function(request){
+    $.get(window.location.href + "/socialservices",{BrgyID : $('#brgy').val()},function(data){      
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbsocialservices">'      
       output += '<thead>'
       output += '<tr>'
@@ -468,8 +468,8 @@ var reportmodule = {
       output = '';
     })
   },
-  specialskills : function(){
-    $.get(window.location.href + "/specialskills",{},function(data){      
+  specialskills : function(request){
+    $.get(window.location.href + "/specialskills",{BrgyID : $('#brgy').val()},function(data){      
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbspecialskills">'      
       output += '<thead>'
       output += '<tr>'
@@ -549,8 +549,8 @@ var reportmodule = {
       output = '';
     })
   },
-  monthlyincome : function(){
-    $.get(window.location.href + "/monthlyincome",{},function(data){      
+  monthlyincome : function(request){
+    $.get(window.location.href + "/monthlyincome",{BrgyID : $('#brgy').val()},function(data){      
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbmonthlyincome">'      
       output += '<thead>'
       output += '<tr>'
@@ -597,8 +597,8 @@ var reportmodule = {
       output = '';
     })
   },
-  unitoccupied : function(){
-    $.get(window.location.href + "/unitoccupied",{},function(data){
+  unitoccupied : function(request){
+    $.get(window.location.href + "/unitoccupied",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbunitoccupied">'      
       output += '<thead>'
       output += '<tr>'
@@ -626,8 +626,8 @@ var reportmodule = {
       output = '';      
     });
   },
-  classificationofhouse : function(){
-    $.get(window.location.href + "/classificationofhouse",{},function(data){
+  classificationofhouse : function(request){
+    $.get(window.location.href + "/classificationofhouse",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbclassificationofhouse">'      
       output += '<thead>'
       output += '<tr>'
@@ -661,8 +661,8 @@ var reportmodule = {
       output = '';      
     });
   },
-  lightingfuel : function(){
-    $.get(window.location.href + "/lightingfuel",{},function(data){
+  lightingfuel : function(request){
+    $.get(window.location.href + "/lightingfuel",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tblightingfuel">'      
       output += thead(1)
       output += tr(1)
@@ -698,8 +698,8 @@ var reportmodule = {
       output = '';      
     });
   },
-  cookingFuel : function(){
-    $.get(window.location.href + "/cookingFuel",{},function(data){
+  cookingFuel : function(request){
+    $.get(window.location.href + "/cookingFuel",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbcookingFuel">'      
       output += thead(1)
       output += tr(1)
@@ -732,8 +732,8 @@ var reportmodule = {
 
     })
   },
-  houselocation : function(){
-    $.get(window.location.href + "/houselocation",{},function(data){
+  houselocation : function(request){
+    $.get(window.location.href + "/houselocation",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbhouselocation">'      
       output += thead(1)
       output += tr(1)
@@ -764,8 +764,8 @@ var reportmodule = {
 
     })
   },
-  householdappliances : function(){
-    $.get(window.location.href + "/householdappliances",{},function(data){
+  householdappliances : function(request){
+    $.get(window.location.href + "/householdappliances",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbhouseholdappliances">'      
       output += thead(1)
       output += tr(1)
@@ -817,8 +817,8 @@ var reportmodule = {
     })
 
   },
-  drinkingwater : function(){
-    $.get(window.location.href + "/drinkingwater",{},function(data){
+  drinkingwater : function(request){
+    $.get(window.location.href + "/drinkingwater",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbdrinkingwater">'      
       output += thead(1)
       output += tr(1)
@@ -855,8 +855,8 @@ var reportmodule = {
 
     })
   },
-  gendrinkingwater : function(){
-    $.get(window.location.href + "/gendrinkingwater",{},function(data){
+  gendrinkingwater : function(request){
+    $.get(window.location.href + "/gendrinkingwater",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbgendrinkingwater">'      
       output += thead(1)
       output += tr(1)
@@ -893,8 +893,8 @@ var reportmodule = {
 
     })
   },
-  watersourcedistance : function(){
-    $.get(window.location.href + "/watersourcedistance",{},function(data){
+  watersourcedistance : function(request){
+    $.get(window.location.href + "/watersourcedistance",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbwatersourcedistance">'      
       output += thead(1)
       output += tr(1)
@@ -923,8 +923,8 @@ var reportmodule = {
 
     })
   },
-  genwatersourcedistance : function(){
-    $.get(window.location.href + "/genwatersourcedistance",{},function(data){
+  genwatersourcedistance : function(request){
+    $.get(window.location.href + "/genwatersourcedistance",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbgenwatersourcedistance">'      
       output += thead(1)
       output += tr(1)
@@ -953,8 +953,8 @@ var reportmodule = {
 
     })
   },
-  toilettype : function(){
-    $.get(window.location.href + "/toilettype",{},function(data){
+  toilettype : function(request){
+    $.get(window.location.href + "/toilettype",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbtoilettype">'      
       output += thead(1)
       output += tr(1)
@@ -993,8 +993,8 @@ var reportmodule = {
 
     })  
   },
-  garbagedisposal : function(){
-    $.get(window.location.href + "/garbagedisposal",{},function(data){
+  garbagedisposal : function(request){
+    $.get(window.location.href + "/garbagedisposal",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbgarbagedisposal">'      
       output += thead(1)
       output += tr(1)
@@ -1032,6 +1032,303 @@ var reportmodule = {
       output = '';      
 
     })
+  },  
+  birthspace : function(request){
+    $.get(window.location.href + "/birthspacing",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbbirthspace">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)
+      output += hth("TOTAL MWRA's",0,0)
+      output += hth("BTL",0,0)
+      output += hth("V",0,0)
+      output += hth("IUD",0,0)
+      output += hth("Pills",0,0)
+      output += hth("INJ",0,0)
+      output += hth("Condom",0,0)
+      output += hth("STM",0,0)
+      output += hth("SDM",0,0)
+      output += hth("BOM",0,0)
+      output += hth("Withdrawal",0,0)
+      output += hth("BBT",0,0)
+      output += hth("Calendar",0,0)
+      output += hth("TOTAL USER",0,0)
+      output += hth("NON USER",0,0)      
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)
+        output += td("TBA")
+        output += td(data[i].BTL)        
+        output += td(data[i].V)
+        output += td(data[i].IUD)
+        output += td(data[i].Pills)
+        output += td(data[i].INJ)
+        output += td(data[i].Condom)
+        output += td(data[i].STM)
+        output += td(data[i].SDM)
+        output += td(data[i].BOM)
+        output += td(data[i].Withdrawal)
+        output += td(data[i].BBT)
+        output += td(data[i].Calendar)
+        output += td(data[i].TotalUser)
+        output += td(data[i].NonUser)
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#birthspace').html(output)
+      output = '';      
+
+    })
+  },
+  fpstopping : function(request){
+    $.get(window.location.href + "/fpstopping",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbfpstopping">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)            
+      output += hth("Fear of SideEffect",0,0) 
+      output += hth("No FP Service Center",0,0) 
+      output += hth("Wanted Child",0,0) 
+      output += hth("Menopausal Period",0,0) 
+      output += hth("Sickness",0,0) 
+      output += hth("Spouse Away/Abroad",0,0) 
+      output += hth("Method failure",0,0) 
+      output += hth("Achieving Pregnancy",0,0) 
+      output += hth("Others",0,0) 
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)        
+        output += td(data[i].FearofSideEffect)
+        output += td(data[i].NoFPServiceCenter)
+        output += td(data[i].WantChild)
+        output += td(data[i].Menopausal)
+        output += td(data[i].Sickness)
+        output += td(data[i].SpouseAway)
+        output += td(data[i].Methodfail)
+        output += td(data[i].AchievingPregnancy)
+        output += td(data[i].Others)
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#reason').html(output)
+      output = '';      
+
+    })
+  },
+  engagedfarming : function(request){
+    $.get(window.location.href + "/engagedfarming",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbengagedfarming">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)
+      output += hth('Farming',0,0)
+      output += hth('Fishing',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)
+        output += td(data[i].Farming)
+        output += td(data[i].Fishing)
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#engagedfarming').html(output)
+      output = '';      
+
+    })
+  },
+  crops : function(request){
+    $.get(window.location.href + "/crops",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbcrops">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('rice',0,0)
+      output += hth('corn',0,0)
+      output += hth('vegetables',0,0)
+      output += hth('rootcrops',0,0)
+      output += hth('fruits',0,0)
+      output += hth('Sugarcane',0,0)
+      output += hth('Coffe',0,0)
+      output += hth('Others',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)
+        output += td(data[i].rice)        
+        output += td(data[i].corn)
+        output += td(data[i].vegetables)
+        output += td(data[i].rootcrops)
+        output += td(data[i].fruittrees)
+        output += td(data[i].sugarcane)
+        output += td(data[i].coffe)
+        output += td(data[i].others)
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#crops').html(output)
+      output = '';      
+
+    })
+  },
+  marketdistance : function(request){
+    $.get(window.location.href + "/marketdistance",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbmarketdistance">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('Less than 250 meters',0,0)
+      output += hth('250 to 500 meters',0,0)
+      output += hth('More than 500 meters',0,0)
+      output += hth('Not Available',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)      
+        output += td(data[i].less250)
+        output += td(data[i].S250t0500)
+        output += td(data[i].morethan500)
+        output += td(data[i].notavailable)        
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#marketdistance').html(output)
+      output = '';      
+
+    })
+  },
+  publicpreschool : function(request){
+    $.get(window.location.href + "/publicpreschool",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbpublicpreschool">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('Less than 250 meters',0,0)
+      output += hth('250 to 500 meters',0,0)
+      output += hth('More than 500 meters',0,0)
+      output += hth('Not Available',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)      
+        output += td(data[i].less250)
+        output += td(data[i].S250t0500)
+        output += td(data[i].morethan500)
+        output += td(data[i].notavailable)        
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#publicpreschool').html(output)
+      output = '';      
+
+    })
+  },
+  publicprimaryschool : function(request){
+    $.get(window.location.href + "/publicprimaryschool",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbpublicprimaryschool">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('Less than 250 meters',0,0)
+      output += hth('250 to 500 meters',0,0)
+      output += hth('More than 500 meters',0,0)
+      output += hth('Not Available',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)      
+        output += td(data[i].less250)
+        output += td(data[i].S250t0500)
+        output += td(data[i].morethan500)
+        output += td(data[i].notavailable)        
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#publicprimaryschool').html(output)
+      output = '';      
+
+    })
+  },
+  publictertiaryshcool : function(request){
+    $.get(window.location.href + "/publictertiaryshcool",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbpublictertiaryshcool">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('Less than 250 meters',0,0)
+      output += hth('250 to 500 meters',0,0)
+      output += hth('More than 500 meters',0,0)
+      output += hth('Not Available',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)      
+        output += td(data[i].less250)
+        output += td(data[i].S250t0500)
+        output += td(data[i].morethan500)
+        output += td(data[i].notavailable)        
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#publictertiaryshcool').html(output)
+      output = '';      
+
+    })
+  },
+  privatepreschool : function(request){
+    $.get(window.location.href + "/privatepreschool",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbprivateprimaryschool">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('Less than 250 meters',0,0)
+      output += hth('250 to 500 meters',0,0)
+      output += hth('More than 500 meters',0,0)
+      output += hth('Not Available',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)      
+        output += td(data[i].less250)
+        output += td(data[i].S250t0500)
+        output += td(data[i].morethan500)
+        output += td(data[i].notavailable)        
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#privatepreschool').html(output)
+      output = '';      
+
+    })
   }
 }
 function thead(num){
@@ -1062,13 +1359,16 @@ function td(data){
   return '<td>'+ data +'</td>';
 }
 $(function(){  
+  
   initmodule.BrgyOption('brgy');
+  
   $('#showbrgy').click(function(){    
     request = {
       BrgyID : $('#brgy').val()
     }
     reportgroup(request)    
   })  
+  
   $(document).ajaxStart(function() {    
     box = bootbox.dialog({
       message: '<p class="text-center align-middle">Please wait while Report is loading . . .</p>',
@@ -1095,7 +1395,11 @@ $(function(){
       reportmodule.disabledpersons(request);
       reportmodule.regvoters4ps(request);
       reportmodule.socialservices(request);
-      reportmodule.specialskills();            
+      reportmodule.specialskills();
+      $('#tabreport7').fadeOut();
+      $('#tabreport6').fadeOut();            
+      $('#tabreport6').fadeOut();
+      $('#tabreport5').fadeOut(); 
       $('#tabreport4').fadeOut();
       $('#tabreport3').fadeOut();
       $('#tabreport2').fadeOut();
@@ -1108,6 +1412,10 @@ $(function(){
       })              
     }else if($('#reportlist').val() == 2){
       reportmodule.monthlyincome()
+      $('#tabreport7').fadeOut();
+      $('#tabreport6').fadeOut();
+      $('#tabreport6').fadeOut();
+      $('#tabreport5').fadeOut(); 
       $('#tabreport4').fadeOut();
       $('#tabreport3').fadeOut();
       $('#tabreport1').fadeOut();
@@ -1124,7 +1432,11 @@ $(function(){
       reportmodule.lightingfuel();    
       reportmodule.cookingFuel();
       reportmodule.houselocation();    
-      reportmodule.householdappliances();    
+      reportmodule.householdappliances();
+      $('#tabreport7').fadeOut();    
+      $('#tabreport6').fadeOut();
+      $('#tabreport6').fadeOut();
+      $('#tabreport5').fadeOut(); 
       $('#tabreport4').fadeOut();
       $('#tabreport2').fadeOut();
       $('#tabreport1').fadeOut();
@@ -1142,12 +1454,69 @@ $(function(){
       reportmodule.genwatersourcedistance() 
       reportmodule.toilettype()
       reportmodule.garbagedisposal()
+      $('#tabreport7').fadeOut();
+      $('#tabreport6').fadeOut();
+      $('#tabreport6').fadeOut();
+      $('#tabreport5').fadeOut(); 
       $('#tabreport3').fadeOut();
       $('#tabreport2').fadeOut();
       $('#tabreport1').fadeOut();
       $('#tabreport4').fadeIn(); 
       activeTab = '#DWater';
       $('#tabreport4 .nav-link').each(function() {
+        $(this).click(function(){
+          activeTab = $(this).attr('href')
+        })
+      })      
+    }else if($('#reportlist').val() == 5){
+      reportmodule.birthspace()
+      reportmodule.fpstopping()
+      $('#tabreport7').fadeOut();
+      $('#tabreport6').fadeOut();
+      $('#tabreport6').fadeOut();
+      $('#tabreport4').fadeOut(); 
+      $('#tabreport3').fadeOut();
+      $('#tabreport2').fadeOut();
+      $('#tabreport1').fadeOut();
+      $('#tabreport5').fadeIn(); 
+      activeTab = '#BSpace';
+      $('#tabreport5 .nav-link').each(function() {
+        $(this).click(function(){
+          activeTab = $(this).attr('href')
+        })
+      })      
+    }else if($('#reportlist').val() == 6){
+      reportmodule.engagedfarming()
+      reportmodule.crops()
+      $('#tabreport7').fadeOut();
+      $('#tabreport6').fadeOut();
+      $('#tabreport5').fadeOut();
+      $('#tabreport4').fadeOut(); 
+      $('#tabreport3').fadeOut();
+      $('#tabreport2').fadeOut();
+      $('#tabreport1').fadeOut();
+      $('#tabreport6').fadeIn(); 
+      activeTab = '#EFarming';
+      $('#tabreport6 .nav-link').each(function() {
+        $(this).click(function(){
+          activeTab = $(this).attr('href')
+        })
+      })      
+    }else if($('#reportlist').val() == 7){
+      reportmodule.marketdistance()
+      reportmodule.publicpreschool()
+      reportmodule.publicprimaryschool()
+      reportmodule.privatepreschool()
+      reportmodule.publictertiaryshcool()      
+      $('#tabreport6').fadeOut();
+      $('#tabreport5').fadeOut();
+      $('#tabreport4').fadeOut(); 
+      $('#tabreport3').fadeOut();
+      $('#tabreport2').fadeOut();
+      $('#tabreport1').fadeOut();
+      $('#tabreport7').fadeIn(); 
+      activeTab = '#MDistance';
+      $('#tabreport7 .nav-link').each(function() {
         $(this).click(function(){
           activeTab = $(this).attr('href')
         })
