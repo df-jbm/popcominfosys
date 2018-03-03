@@ -46,6 +46,13 @@ class dbcontroller extends Controller
   protected $publicprimaryschool = array();
   protected $publictertiaryshcool = array();
   protected $privatepreschool = array();
+  protected $privatesecondaryschool = array();
+  protected $privatetertiaryschool = array();
+  protected $publichealthcenter = array();
+  protected $privatehealthcenter = array();  
+  protected $publicbirthingclinic = array();
+  protected $privatebirthingclinic = array();
+  protected $typeoffishing = array();
 
   protected $brgy = array();
 
@@ -70,7 +77,97 @@ class dbcontroller extends Controller
 
       return redirect($this->redirectPath());
   }
+  public function typeoffishing(Request $r){
+    try {
+      $this->typeoffishing = DB::select('CALL typeoffishing('.$r->BrgyID.')');
+      return response($this->typeoffishing);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+  /**
+   * [privatebirthingclinic description]
+   * @param  Request $r [description]
+   * @return [type]     [description]
+   */
+  public function privatebirthingclinic(Request $r){
+    try {
+      $this->privatebirthingclinic = DB::select('CALL privatebirthingclinic('.$r->BrgyID.')');
+      return response($this->privatebirthingclinic);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+  /**
+   * [publicbirthingclinic description]
+   * @param  Request $r [description]
+   * @return [type]     [description]
+   */
+  public function publicbirthingclinic(Request $r){
+    try {
+      $this->publicbirthingclinic = DB::select('CALL publicbirthingclinic('.$r->BrgyID.')');
+      return response($this->publicbirthingclinic);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+
+  /**
+   * [privatehealthcenter description]
+   * @param  Request $r [description]
+   * @return [type]     [description]
+   */
+  public function privatehealthcenter(Request $r){
+    try {
+      $this->privatehealthcenter = DB::select('CALL privatehealthcenter('.$r->BrgyID.')');
+      return response($this->privatehealthcenter);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+  /**
+   * [publichealthcenter description]
+   * @param  Request $r [description]
+   * @return [type]     [description]
+   */
+  public function publichealthcenter(Request $r){
+    try {
+      $this->publichealthcenter = DB::select('CALL publichealthcenter('.$r->BrgyID.')');
+      return response($this->publichealthcenter);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+
+  /**
+   * [privatetertiaryschool description]
+   * @param  Request $r [description]
+   * @return [type]     [description]
+   */
   
+  public function privatetertiaryschool(Request $r){
+    try {
+      $this->privatetertiaryschool = DB::select('CALL privatetertiaryschool('.$r->BrgyID.')');
+      return response($this->privatetertiaryschool);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+
+  /**
+   * [privatesecondaryschool description]
+   * @param  Request $r [description]
+   * @return [type]     [description]
+   */
+  public function privatesecondaryschool(Request $r){
+    try {
+      $this->privatesecondaryschool = DB::select('CALL privatesecondaryschool('.$r->BrgyID.')');
+      return response($this->privatesecondaryschool);      
+    } catch (\Exception $e) {
+      dd($e);
+    }
+  }
+
   /**
    * [privatepreschool description]
    * @param Request $r [description]

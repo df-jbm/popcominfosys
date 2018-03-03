@@ -95,6 +95,20 @@ Route::group(['middleware' => 'auth'], function(){
 
   Route::get('reports/privatepreschool','dbcontroller@privatepreschool');
 
+  Route::get('reports/privatesecondaryschool','dbcontroller@privatesecondaryschool');
+
+  Route::get('reports/privatetertiaryschool','dbcontroller@privatetertiaryschool');
+
+  Route::get('reports/publichealthcenter','dbcontroller@publichealthcenter');
+
+  Route::get('reports/privatehealthcenter','dbcontroller@privatehealthcenter');
+
+  Route::get('reports/publicbirthingclinic','dbcontroller@publicbirthingclinic');
+
+  Route::get('reports/privatebirthingclinic','dbcontroller@privatebirthingclinic');
+
+  Route::get('reports/typeoffishing','dbcontroller@typeoffishing');
+  
   Route::get('data-entry',function(){
     return view('data-entry');
   });

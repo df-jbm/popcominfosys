@@ -30,9 +30,9 @@
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="form-group col-sm-10 offset-sm-2">            
+          <div class="form-group col-sm-10 offset-sm-1">            
             <div class="row form-group">
-              <div class="col-sm-2">
+              <div class="col-sm-3">
                 <label for="brgy">Select Barangay</label>
                 <div class="form-group">                  
                   <select class="form-control" id="brgy">
@@ -40,7 +40,7 @@
                   </select>              
                 </div>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-3">
                 <label for="reportlist">Report Areas</label>
                 <div class="form-group">                  
                   <select class="form-control" id="reportlist">
@@ -54,18 +54,14 @@
                   </select>              
                 </div>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-3">
                 <label for="showbrgy">Toogle to show report</label>
                 <button class="btn btn-primary btn-md form-control" id="showbrgy">Generate</button>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-3">
                 <label for="showbrgy">Toogle to print report</label>
                 <button class="btn btn-primary btn-md form-control" id="printreport">Print</button>
-              </div>
-              <div class="col-sm-2">
-                <label for="Export">Toogle to Export</label>
-                <button class="btn btn-primary btn-md form-control" id="Export">Export</button>
-              </div>
+              </div>              
             </div>
             <!--/.row-->
           </div>

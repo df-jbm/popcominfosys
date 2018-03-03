@@ -163,7 +163,7 @@ var reportmodule = {
   },
   birthRA : function(request){
     $.get(window.location.href + "/birthRA",{BrgyID : $('#brgy').val()},function(data){      
-      var output = '<table class="table table-hover table-bordered text-center table-responsive" width="100%" id="tbbirthRA">'      
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbbirthRA">'      
       output += '<thead>'
       output += '<tr>'
       output += '<th rowspan="3">Barangay</th>'
@@ -667,7 +667,7 @@ var reportmodule = {
       output += thead(1)
       output += tr(1)
       output += hth('Barangay',2,0)
-      output += hth('Type of fuel',0,6)
+      output += hth('Type of fuel/Used for lighting',0,6)
       output += hth('Total',2,0)
       output += tr(0)
       output += tr(1)
@@ -704,7 +704,7 @@ var reportmodule = {
       output += thead(1)
       output += tr(1)
       output += hth('Barangay',2,0)
-      output += hth('Type of Fuel',0,5)
+      output += hth('Type of Fuel/Used for Cooking',0,5)
       output += tr(0)
       output += tr(1)
       output += hth('Electricity',0,0)
@@ -861,7 +861,7 @@ var reportmodule = {
       output += thead(1)
       output += tr(1)
       output += hth('Barangay',2,0)
-      output += hth('General Source of Drinking Water',0,7)
+      output += hth('General Used of  Water',0,7)
       output += tr(0)
       output += tr(1)      
       output += hth('Community water system',0,0)
@@ -902,9 +902,9 @@ var reportmodule = {
       output += hth('Distance of Water Source From the household',0,3)
       output += tr(0)
       output += tr(1)      
-      output += hth('Less than 250 meters',0,0)
-      output += hth('250-500 meters',0,0)
-      output += hth('500 meters and more',0,0)
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250-500 meters Distance',0,0)
+      output += hth('500 meters Distance and more',0,0)
       output += tr(0)
       output += thead(0)
       output += tbody(1)
@@ -932,9 +932,9 @@ var reportmodule = {
       output += hth('Distance of Gen. Water Source From the household',0,3)
       output += tr(0)
       output += tr(1)      
-      output += hth('Less than 250 meters',0,0)
-      output += hth('250-500 meters',0,0)
-      output += hth('500 meters and more',0,0)
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250-500 meters ',0,0)
+      output += hth('500 meters Distance and more',0,0)
       output += tr(0)
       output += thead(0)
       output += tbody(1)
@@ -1185,15 +1185,51 @@ var reportmodule = {
 
     })
   },
+  typeoffishing : function(request){
+    $.get(window.location.href + "/typeoffishing",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbtypeoffishing">'      
+      //barangay, CommercialFishing, MarineFishing, Inland, Aquaculture, CollectingSeaProducts, Others, Total
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('Commercial Fishing',0,0)
+      output += hth('Marine Fishing',0,0)
+      output += hth('Inland',0,0)
+      output += hth('Aquaculture',0,0)
+      output += hth('Collecting Sea Products',0,0)
+      output += hth('Others',0,0)
+      output += hth('Total',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)
+        output += td(data[i].CommercialFishing)        
+        output += td(data[i].MarineFishing)
+        output += td(data[i].Inland)
+        output += td(data[i].Aquaculture)
+        output += td(data[i].CollectingSeaProducts)
+        output += td(data[i].Others)
+        output += td(data[i].Total)        
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#typeoffishing').html(output)
+      output = '';      
+
+    })
+  },
   marketdistance : function(request){
     $.get(window.location.href + "/marketdistance",{BrgyID : $('#brgy').val()},function(data){
       var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbmarketdistance">'      
       output += thead(1)
       output += tr(1)
       output += hth('Barangay',0,0)      
-      output += hth('Less than 250 meters',0,0)
-      output += hth('250 to 500 meters',0,0)
-      output += hth('More than 500 meters',0,0)
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250 to 500 meters Distance',0,0)
+      output += hth('More than 500 meters Distance',0,0)
       output += hth('Not Available',0,0)
       output += tr(0)
       output += thead(0)
@@ -1220,9 +1256,9 @@ var reportmodule = {
       output += thead(1)
       output += tr(1)
       output += hth('Barangay',0,0)      
-      output += hth('Less than 250 meters',0,0)
-      output += hth('250 to 500 meters',0,0)
-      output += hth('More than 500 meters',0,0)
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250 to 500 meters Distance',0,0)
+      output += hth('More than 500 meters Distance',0,0)
       output += hth('Not Available',0,0)
       output += tr(0)
       output += thead(0)
@@ -1249,9 +1285,9 @@ var reportmodule = {
       output += thead(1)
       output += tr(1)
       output += hth('Barangay',0,0)      
-      output += hth('Less than 250 meters',0,0)
-      output += hth('250 to 500 meters',0,0)
-      output += hth('More than 500 meters',0,0)
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250 to 500 meters Distance',0,0)
+      output += hth('More than 500 meters Distance',0,0)
       output += hth('Not Available',0,0)
       output += tr(0)
       output += thead(0)
@@ -1278,9 +1314,9 @@ var reportmodule = {
       output += thead(1)
       output += tr(1)
       output += hth('Barangay',0,0)      
-      output += hth('Less than 250 meters',0,0)
-      output += hth('250 to 500 meters',0,0)
-      output += hth('More than 500 meters',0,0)
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250 to 500 meters Distance',0,0)
+      output += hth('More than 500 meters Distance',0,0)
       output += hth('Not Available',0,0)
       output += tr(0)
       output += thead(0)
@@ -1307,9 +1343,9 @@ var reportmodule = {
       output += thead(1)
       output += tr(1)
       output += hth('Barangay',0,0)      
-      output += hth('Less than 250 meters',0,0)
-      output += hth('250 to 500 meters',0,0)
-      output += hth('More than 500 meters',0,0)
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250 to 500 meters Distance',0,0)
+      output += hth('More than 500 meters Distance',0,0)
       output += hth('Not Available',0,0)
       output += tr(0)
       output += thead(0)
@@ -1326,6 +1362,180 @@ var reportmodule = {
       output += tbody(0)
       output += '</table>'
       $('#privatepreschool').html(output)
+      output = '';      
+
+    })
+  },
+  privatesecondaryschool : function(request){
+    $.get(window.location.href + "/privatesecondaryschool",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbprivatesecondaryschool">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250 to 500 meters Distance',0,0)
+      output += hth('More than 500 meters Distance',0,0)
+      output += hth('Not Available',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)      
+        output += td(data[i].less250)
+        output += td(data[i].S250t0500)
+        output += td(data[i].morethan500)
+        output += td(data[i].notavailable)        
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#privatesecondaryschool').html(output)
+      output = '';      
+
+    })
+  },
+  privatetertiaryschool : function(request){
+    $.get(window.location.href + "/privatetertiaryschool",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbprivatetertiaryschool">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250 to 500 meters Distance',0,0)
+      output += hth('More than 500 meters Distance',0,0)
+      output += hth('Not Available',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)      
+        output += td(data[i].less250)
+        output += td(data[i].S250t0500)
+        output += td(data[i].morethan500)
+        output += td(data[i].notavailable)        
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#privatetertiaryschool').html(output)
+      output = '';      
+
+    })
+  },
+  publichealthcenter : function(request){
+    $.get(window.location.href + "/publichealthcenter",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbpublichealthcenter">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250 to 500 meters Distance',0,0)
+      output += hth('More than 500 meters Distance',0,0)
+      output += hth('Not Available',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)      
+        output += td(data[i].less250)
+        output += td(data[i].S250t0500)
+        output += td(data[i].morethan500)
+        output += td(data[i].notavailable)        
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#publichealthcenter').html(output)
+      output = '';      
+
+    })
+  },
+  privatehealthcenter : function(request){
+    $.get(window.location.href + "/privatehealthcenter",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbprivatehealthcenter">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250 to 500 meters Distance',0,0)
+      output += hth('More than 500 meters Distance',0,0)
+      output += hth('Not Available',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)      
+        output += td(data[i].less250)
+        output += td(data[i].S250t0500)
+        output += td(data[i].morethan500)
+        output += td(data[i].notavailable)        
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#privatehealthcenter').html(output)
+      output = '';      
+
+    })
+  },
+  publicbirthingclinic : function(request){
+    $.get(window.location.href + "/publicbirthingclinic",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbpublicbirthingclinic">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250 to 500 meters Distance',0,0)
+      output += hth('More than 500 meters Distance',0,0)
+      output += hth('Not Available',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)      
+        output += td(data[i].less250)
+        output += td(data[i].S250t0500)
+        output += td(data[i].morethan500)
+        output += td(data[i].notavailable)        
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#publicbirthingclinic').html(output)
+      output = '';      
+
+    })
+  },
+  privatebirthingclinic : function(request){
+    $.get(window.location.href + "/privatebirthingclinic",{BrgyID : $('#brgy').val()},function(data){
+      var output = '<table class="table table-hover table-bordered text-center" width="100%" id="tbprivatebirthingclinic">'      
+      output += thead(1)
+      output += tr(1)
+      output += hth('Barangay',0,0)      
+      output += hth('Less than 250 meters Distance',0,0)
+      output += hth('250 to 500 meters Distance',0,0)
+      output += hth('More than 500 meters Distance',0,0)
+      output += hth('Not Available',0,0)
+      output += tr(0)
+      output += thead(0)
+      output += tbody(1)
+      for(var i in data){        
+        output += tr(1)                                  
+        output += td(data[i].barangay)      
+        output += td(data[i].less250)
+        output += td(data[i].S250t0500)
+        output += td(data[i].morethan500)
+        output += td(data[i].notavailable)        
+        output += tr(0)
+      }
+      output += tbody(0)
+      output += '</table>'
+      $('#privatebirthingclinic').html(output)
       output = '';      
 
     })
@@ -1488,6 +1698,7 @@ $(function(){
     }else if($('#reportlist').val() == 6){
       reportmodule.engagedfarming()
       reportmodule.crops()
+      reportmodule.typeoffishing()
       $('#tabreport7').fadeOut();
       $('#tabreport6').fadeOut();
       $('#tabreport5').fadeOut();
@@ -1508,6 +1719,12 @@ $(function(){
       reportmodule.publicprimaryschool()
       reportmodule.privatepreschool()
       reportmodule.publictertiaryshcool()      
+      reportmodule.privatesecondaryschool()      
+      reportmodule.privatetertiaryschool()      
+      reportmodule.publichealthcenter()
+      reportmodule.privatehealthcenter()
+      reportmodule.publicbirthingclinic()
+      reportmodule.privatebirthingclinic()
       $('#tabreport6').fadeOut();
       $('#tabreport5').fadeOut();
       $('#tabreport4').fadeOut(); 
